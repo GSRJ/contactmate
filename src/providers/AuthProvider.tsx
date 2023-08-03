@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
       return;
     }
     api.defaults.headers.common.Authorization = `Bearer ${token}`;
+    setLoading(false);
   });
 
   const signIn = async (data: TLoginData) => {
@@ -42,6 +43,8 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
   };
 
   return (
-    <AuthContext.Provider value={{ signIn }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ signIn, loading }}>
+      {children}
+    </AuthContext.Provider>
   );
 };

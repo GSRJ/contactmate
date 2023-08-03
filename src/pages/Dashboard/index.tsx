@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
+import { Card } from "../../components";
 import { api } from "../../services/api";
+import { Board, Container } from "./styles";
 
 export interface IContact {
   id: number;
@@ -23,22 +24,39 @@ export interface IContact {
 
 export const Dashboard = () => {
   const [contacts, setContacts] = useState<IContact[]>();
-  const { loading } = useAuth();
+  const [isContactsEmpty, setIsContactsEmpty] = useState<boolean>(false);
   useEffect(() => {
     (async () => {
       const response = await api.get<IContact[]>("/contacts");
       setContacts(response.data);
+      setIsContactsEmpty(response.data.length === 0);
     })();
   }, []);
+
   return (
     <>
-      {" "}
-      <h1>Dashboard</h1>;
-      <ul>
-        {contacts?.map((contact) => (
-          <li key={contact.id}>{contact.name}</li>
-        ))}
-      </ul>
+      <Container>
+        <header>
+          <button type="button">Novo</button>
+        </header>
+
+        <main>
+          <Board>
+            <h3>Lista de contatos</h3>
+            {isContactsEmpty ? (
+              <p>Nenhum contato cadastrado</p>
+            ) : (
+              contacts?.map((contact) => (
+                <Card
+                  key={contact.id}
+                  contact={contact}
+                  setContact={setContacts}
+                />
+              ))
+            )}
+          </Board>
+        </main>
+      </Container>
     </>
   );
 };
