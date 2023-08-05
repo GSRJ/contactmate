@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card } from "../../components";
+import { Card } from "../../components/Card";
 import { api } from "../../services/api";
 import { Board, Container } from "./styles";
 

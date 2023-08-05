@@ -1,5 +1,5 @@
 import { Dispatch } from "react";
-import { IContact } from "../pages/Dashboard";
+import { IContact } from "../../pages/Dashboard";
 import { Container } from "./styles";
 
 interface CardProps {
