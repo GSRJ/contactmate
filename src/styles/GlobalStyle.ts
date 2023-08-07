@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 :root {
-  --color1: #111a11;
-  --color2: #2b371e;
-  --color3: #52543f;
-  --color4: #7a8063;
-  --color5: #aabd8e;
+  --color1: #4c4c4c;
+  --color2: #4c4c4c;
+  --color3: #4c4c4c;
+  --color4: #1565c0;
+  --color5: #f7f7f7;
 
 font-size: 60%;
 }
@@ -52,5 +52,7 @@ h1, h2, h3, h4, h5, h6, strong {
 
 button {
   cursor: pointer;
+  width: 20px;
+  height: 30px;
 }
 `;

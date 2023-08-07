@@ -6,6 +6,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+
       <AuthProvider>
         <RoutesMain />
       </AuthProvider>
