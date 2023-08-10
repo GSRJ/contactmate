@@ -20,6 +20,10 @@ export const RoutesMain = () => {
         path="/login"
         element={<Login />}
       />
+      <Route
+        path=""
+        element={<Login />}
+      />
       <Route element={<ProtectedRoutes />}>
         <Route
           path="/dashboard"

@@ -80,6 +80,13 @@ export const Register = () => {
               Cadastrar
             </Button>
           </form>
+          <Button
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
+          </Button>
         </Paper>
       </Container>
     </main>

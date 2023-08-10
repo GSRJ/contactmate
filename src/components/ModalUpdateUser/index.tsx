@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { TUpdateUserData } from "../../pages/Profile/validator";
 import { api } from "../../services/api";
@@ -70,7 +71,12 @@ export const ModalUpdateUser = ({
           {...register("phone")}
         />
 
-        <button type="submit">Atualizar</button>
+        <Button
+          variant="contained"
+          type="submit"
+        >
+          Atualizar
+        </Button>
       </form>
     </Modal>
   );
